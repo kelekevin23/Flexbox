@@ -1,7 +1,11 @@
 @charset "utf-8";
 
 main, header, article{
+    box-sizing: border-box;
     border: 1px solid grey;
+    padding: 5px;
+    margin: 2px;
+   
 }
 body{
     background: gray;
@@ -11,7 +15,38 @@ main{
     max-width: 800px;
     width: 80%;
     margin: auto;
+    justify-content: space-around;
+    align-content: center;
+    align-content: flex-end;
+    
 }
 article{
     background: white;
+}
+
+main{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article{
+    width: calc(25% - 4px);
+    align-self: flex-start;
+}
+header{
+    width: 100%;
+    order: -1;
+}
+main article:nth-child(4){
+    color: red;
+    order: -1;
+}
+
+@media screen and (max-width: 600px){
+    main{
+        width: 100%;
+        flex-direction: column;
+    }
+    
 }
